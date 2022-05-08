@@ -1,0 +1,23 @@
+Open XAMPP and start Apache & MySQL
+Open phpmyadmin
+Create new database book_a_book_se in phpmyadmin
+
+Clone project to any folder
+Open git bash / command prompt in your project folder
+Write command below
+composer install
+copy .env.example .env
+
+Open project in visual studio code
+Open .env file, update database configuration like below
+DB_DATABASE=book_a_book_se
+DB_USERNAME=root
+DB_PASSWORD=
+
+Write command below in visual studio code terminal / command prompt / git bash
+php artisan key:generate (Generate APP_KEY in .env)
+php artisan migrate (Create database table)
+php artisan serve (Run the application)
+
+For default xampp configuration you can access at the link below
+(http://localhost:8000/)
