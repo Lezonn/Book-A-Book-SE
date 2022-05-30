@@ -28,8 +28,8 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="title" class="form-label">Telephone</label>
-            <input type="text" class="form-control @error('store_telephone') is-invalid @enderror" id="store_telephone" name="store_telephone" required autofocus value="{{ old('store_telephone', $store->store_telephone) }}">
+            <label for="store_telephone" class="form-label">Telephone</label>
+            <input type="text" class="form-control @error('store_telephone') is-invalid @enderror" id="store_telephone" name="store_telephone" required value="{{ old('store_telephone', $store->store_telephone) }}">
             @error('store_telephone')
               <div class="invalid-feedback">
                   {{ $message }}
@@ -37,8 +37,8 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="title" class="form-label">Address</label>
-            <textarea rows="3" type="text" class="form-control @error('store_address') is-invalid @enderror" id="store_address" name="store_address" required autofocus>{{ old('store_address', $store->store_address) }}</textarea>
+            <label for="store_address" class="form-label">Address</label>
+            <textarea rows="3" type="text" class="form-control @error('store_address') is-invalid @enderror" id="store_address" name="store_address" required>{{ old('store_address', $store->store_address) }}</textarea>
             @error('store_address')
                 <div class="invalid-feedback">
                     {{ $message }}

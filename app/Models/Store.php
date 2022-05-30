@@ -12,7 +12,6 @@ class Store extends Model
 
     protected $guarded = ['id'];
 
-
     public function users() {
         return $this->hasMany(User::class);
     }
@@ -29,5 +28,13 @@ class Store extends Model
                 'source' => 'store_name'
             ]
         ];
+    }
+
+    public static function boot() {
+        parent::boot();
+
+        static::deleting(function($store) {
+             $store->users()->delete();
+        });
     }
 }

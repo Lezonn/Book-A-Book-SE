@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Store;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Cviebrock\EloquentSluggable\Services\SlugService;
@@ -41,7 +40,7 @@ class AdminStoreController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'store_name' => 'required|max:25',
+            'store_name' => 'required|max:25|unique:stores',
             'slug' => 'required|unique:stores',
             'store_telephone' => 'required',
             'store_address' => 'required',
@@ -93,13 +92,15 @@ class AdminStoreController extends Controller
     public function update(Request $request, Store $store)
     {
         $rules = [
-            'store_name' => 'required|max:25',
             'store_telephone' => 'required',
             'store_address' => 'required'
         ];
 
         if($request->slug != $store->slug) {
             $rules['slug'] = 'required|unique:stores';
+        }
+        if($request->store_name != $store->store_name) {
+            $rules['store_name'] = 'required|max:25|unique:stores';
         }
 
         $validatedData = $request->validate($rules);
