@@ -2,9 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminBookController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\AdminStoreController;
+use App\Http\Controllers\LandingPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +19,7 @@ use App\Http\Controllers\AdminStoreController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [LandingPageController::class, 'index']);
 
 
 
@@ -36,3 +36,6 @@ Route::resource('/admin/stores', AdminStoreController::class)->middleware('auth'
 
 Route::get('/admin/users/checkSlug', [AdminUserController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/users', AdminUserController::class)->middleware('auth');
+
+Route::get('/admin/books/checkSlug', [AdminBookController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/admin/books', AdminBookController::class)->middleware('auth');

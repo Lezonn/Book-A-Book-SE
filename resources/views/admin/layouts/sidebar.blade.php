@@ -7,6 +7,14 @@
             Dashboard
           </a>
         </li>
+        @can('Admin')
+        <li class="nav-item">
+            <a class="nav-link {{ Request::is('admin/books*') ? 'active' : '' }}" aria-current="page" href="/admin/books">
+              <span data-feather="home"></span>
+              Book
+            </a>
+          </li>
+        @endcan
         {{-- <li class="nav-item">
           <a class="nav-link {{ Request::is('dashboard/posts*') ? 'active' : '' }}" href="/dashboard/posts">
             <span data-feather="file-text"></span>

@@ -81,7 +81,7 @@
                 </select>
           </div>
         <input type="hidden" name="role_name" id="hRoleName" value="{{ $roles[0]->role_name }}">
-        <button type="submit" class="btn btn-primary">Edit store</button>
+        <button type="submit" class="btn btn-primary">Edit admin</button>
       </form>
 </div>
 

@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Book;
 use App\Models\Role;
-use App\Models\Store;
 use App\Models\User;
+use App\Models\Store;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -80,6 +81,63 @@ class DatabaseSeeder extends Seeder
             'phone_number' => '085129394834',
             'password' => bcrypt('asd')
         ]);
+
+        Book::create([
+            'title' => 'The 1619 Project',
+            'store_id' => '1',
+            'slug' => 'the-1619-project',
+            'price' => '120000',
+            'author' => 'Nikole Hannah Jonas',
+            'image' => null,
+            'description' => 'abcd',
+            'pages' => '100',
+            'weight' => '0.2',
+            'publisher' => 'SABAK GRIP',
+            'stock' => '5',
+            'publish_date' => '2022-02-02 22:22:22'
+        ]);
+
+        Book::create([
+            'title' => 'Everything And Less',
+            'store_id' => '2',
+            'slug' => 'everything-and-less',
+            'price' => '92000',
+            'author' => 'Mark McGURL',
+            'image' => null,
+            'description' => 'abcd',
+            'pages' => '120',
+            'weight' => '0.3',
+            'publisher' => 'VERSO',
+            'stock' => '9',
+            'publish_date' => '2022-02-02 19:01:31'
+        ]);
+
+        Book::create([
+            'title' => 'No One Is Talking About This',
+            'store_id' => '1',
+            'slug' => 'no-one-is-talking-about-this',
+            'price' => '95000',
+            'author' => 'Patricia Lockwood',
+            'image' => null,
+            'description' => 'abcd',
+            'pages' => '150',
+            'weight' => '0.4',
+            'publisher' => 'SABAK GRIP',
+            'stock' => '7',
+            'publish_date' => '2022-02-02 19:01:31'
+        ]);
+
+        // $table->string('title');
+        // $table->string('slug')->unique();
+        // $table->int('price');
+        // $table->string('author');
+        // $table->string('image')->nullable();
+        // $table->text('description');
+
+        // $table->int('pages');
+        // $table->string('publisher');
+        // $table->string('weight');
+        // $table->timestamp('publish_date');
 
         // $table->string('store_name')->unique();
         //     $table->string('store_address');

@@ -1,0 +1,195 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
+
+
+body{
+    background-color: #FFF9E2;
+}
+
+a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.nav-link {
+    font-size: larger;
+}
+
+.home {
+    height: 100vh;
+    background-image: url('../../images/landingPage/illustrasiAwal.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar {
+    padding-left: 3%;
+}
+
+.navbar-toggler {
+    background-color: white;
+}
+
+.home-text {
+    padding-left: calc(3% + 10px);
+    height: 80%;
+    flex-direction: column;
+}
+
+.home-title{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700 !important;
+    font-size: 5rem;
+}
+
+.home-description{
+    font-family: 'Montserrat', sans-serif;
+    font-weight:500 !important;
+    padding-left: 6px;
+}
+
+.btn-explore{
+    width: fit-content;
+    background-color: #262D71;
+    margin-left: 6px;
+}
+
+.ways {
+    height: fit-content;
+    background-color: #262D71;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 150px 0;
+}
+
+.ways-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700 !important;
+    font-size: 5rem;
+    color :#FFF9E2;
+    text-align: center;
+}
+
+.steps {
+    width: 100%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.step {
+    background-color: #262D71;
+    outline: 0px;
+    border: 0px;
+    text-align: center;
+}
+
+.line {
+    color :#FFF9E2;
+    width: 90%;
+    height: 3px !important;
+    opacity: 100 !important;
+}
+
+.card-text{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700 !important;
+    font-size: 2rem;
+    color :#FFF9E2
+}
+
+.store {
+    background-image: url('../../images/landingPage/ourStore.png');
+    background-position: center;
+}
+
+.carousel-caption{
+    background : rgba(0, 0, 0, 0.7);
+}
+
+.carousel-caption * {
+    color: #FFF9E2;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.carousel-caption h5 {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.carousel-caption p {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.slide-indicator {
+    background-color: #FFF9E2 !important;
+}
+
+.carousel-item img {
+    width: 1440px;
+    height: 720px;
+    margin: 0 auto !important;
+    display: block;
+
+}
+
+.carousel-control-prev-icon {
+    border-radius: 8px;
+    background-color: black !important;
+    padding: 20px;
+}
+
+.carousel-control-next-icon {
+    border-radius: 8px;
+    background-color: black !important;
+    padding: 20px;
+}
+
+.about-us{
+    background-color: #262D71;
+    background-image: url('../../images/landingPage/rakBook.png');
+    background-size: cover;
+    background-position: center;
+    padding: 250px 0;
+
+}
+
+.about-text {
+    text-align: center;
+    padding: 0 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.about-title{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700 !important;
+    font-size: 3rem;
+    color :#FFF9E2
+}
+
+.about-content{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500 !important;
+    color :#FFF9E2
+}
+
+footer {
+    padding: 70px;
+    flex-direction: column;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.social-icon {
+    margin: 20px 10px;
+}
