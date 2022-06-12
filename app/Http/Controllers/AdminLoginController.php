@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,6 +23,12 @@ class AdminLoginController extends Controller
         ]);
 
         if(Auth::attempt($credentials)) {
+            if(!auth()->check() || (auth()->user()->role->role_name !== 'Admin' && auth()->user()->role->role_name !== 'SuperAdmin')) {
+                Auth::logout();
+                $request->session()->invalidate();
+                $request->session()->regenerateToken();
+                return abort(403);
+            }
             $request->session()->regenerate();
 
             return redirect()->intended('/admin');

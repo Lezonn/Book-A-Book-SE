@@ -54,7 +54,10 @@
             <p class="home-description d-block">
                 Let's start collecting happiness with book a book !
             </p>
-            <button type="button" class="btn btn-dark btn-explore">Explore Now</button>
+            <a href="/login">
+                <button type="button" class="btn btn-dark btn-explore">Explore Now</button>
+            </a>
+
         </div>
     </section>
 

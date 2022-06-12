@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@600&family=Neuton&display=swap');
+
+
+body{
+    background-color: #FFF9E2;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+h1{
+    font-family: 'Neuton', serif;
+    color: #151A50;
+    text-align: center;
+}
+
+label{
+    font-family: 'Abhaya Libre', serif;
+    color: #151A50;
+}
+
+.login-content {
+    width: 300px;
+}
+
+.login-picture img {
+    width: 60%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form * {
+    width: 100%;
+}
+
+.register p{
+    font-family: 'Abhaya Libre', serif;
+    color: #969696;
+    text-align: center;
+}
+
+.register a{
+    font-family: 'Abhaya Libre', serif;
+    color: #028C10;
+}
+
+.button{
+    width: 50%;
+    background-color: #151A50;
+    color: #FFFFFF;
+    border-radius :12px;
+    font-family: 'Abhaya Libre', serif;
+}

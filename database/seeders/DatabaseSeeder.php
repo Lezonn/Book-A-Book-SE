@@ -28,6 +28,10 @@ class DatabaseSeeder extends Seeder
             'role_name' => 'Admin'
         ]);
 
+        Role::create ([
+            'role_name' => 'Customer'
+        ]);
+
         Store::create ([
             'store_name' => 'Anggrek',
             'store_address' => 'Jl. Kebon Jeruk Raya No. 27, Kebon Jeruk Jakarta Barat 11530',
@@ -79,6 +83,16 @@ class DatabaseSeeder extends Seeder
             'slug' => 'karin',
             'email' => 'karin@gmail.com',
             'phone_number' => '085129394834',
+            'password' => bcrypt('asd')
+        ]);
+
+        User::create ([
+            'role_id' => '3',
+            'store_id' => '0',
+            'name' => 'cus',
+            'slug' => 'cus',
+            'email' => 'cus@gmail.com',
+            'phone_number' => '12312',
             'password' => bcrypt('asd')
         ]);
 
