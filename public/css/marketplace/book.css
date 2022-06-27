@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;600&family=Montserrat:wght@600;700&display=swap');
+
+section {
+    margin-bottom: 100px;
+}
+
+h1, h4{
+   font-family: 'Montserrat', sans-serif;
+   color: black;
+   font-weight: 600 !important;
+}
+
+h6{
+    font-family: 'Abhaya Libre', serif;
+    font-weight: 600 !important;
+}
+
+h6.price {
+    color : #028C10 !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600 !important;
+}
+
+p.desc {
+    font-family: 'Abhaya Libre', serif;
+    font-weight: 400 !important;
+}
+
+p.content{
+    font-family: 'Abhaya Libre', serif;
+    font-weight: 400 !important;
+}
+
+.btn-cart {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-weight: 700 !important;
+
+}
+
+.btn {
+    background-color: #151A50 !important;
+    border-radius: 15px;
+    padding: 5px 30px !important;
+}
+
+hr {
+    height: 3px !important;
+    opacity: 60% !important;
+}

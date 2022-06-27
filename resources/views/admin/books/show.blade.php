@@ -14,7 +14,7 @@
                 <button class="btn btn-danger" onclick="return confirm('Are you sure?')"><span data-feather="x-circle"></span> Delete</button>
             </form>
             <div style="max-height: 350px; overflow:hidden;">
-                <img src={{ $book->image ? asset('storage/' . $book->image) : 'https://source.unsplash.com/1200x400?book' }} class="img-fluid mt-3" alt="{{ $book->title }}">
+                <img src={{ $book->image ? $book->image : 'https://source.unsplash.com/1200x400?book' }} class="img-fluid mt-3" alt="{{ $book->title }}">
             </div>
 
             <ul class="list-group list-group mt-3">

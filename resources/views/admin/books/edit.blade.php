@@ -120,7 +120,7 @@
             <label for="image" class="form-label">Book image</label>
             <input type="hidden" name="oldImage" value="{{ $book->image }}">
             @if($book->image)
-                <img src={{ asset('storage/' . $book->image) }} class="img-preview img-fluid mb-3 col-sm-5 d-block">
+                <img src={{ $book->image }} class="img-preview img-fluid mb-3 col-sm-5 d-block">
             @else
                 <img class="img-preview img-fluid">
             @endif

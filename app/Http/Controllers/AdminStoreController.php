@@ -48,7 +48,11 @@ class AdminStoreController extends Controller
         ]);
 
         if($request->file('image')) {
-            $validatedData['image'] = $request->file('image')->store('store-images');
+            // $validatedData['image'] = $request->file('image')->store('store-images');
+            $image  = $request->file('image');
+            $result = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
+            $validatedData['image'] = $result;
+
         }
 
         Store::create($validatedData);
@@ -106,10 +110,13 @@ class AdminStoreController extends Controller
         $validatedData = $request->validate($rules);
 
         if($request->file('image')) {
-            if($request->oldImage) {
-                Storage::delete($request->oldImage);
-            }
-            $validatedData['image'] = $request->file('image')->store('store-images');
+            // if($request->oldImage) {
+            //     Storage::delete($request->oldImage);
+            // }
+            // $validatedData['image'] = $request->file('image')->store('store-images');
+            $file = $request->file('image');
+            $result = CloudinaryStorage::replace($store->image, $file->getRealPath(), $file->getClientOriginalName());
+            $validatedData['image'] = $result;
         }
 
         Store::where('id', $store->id)
@@ -127,7 +134,8 @@ class AdminStoreController extends Controller
     public function destroy(Store $store)
     {
         if($store->image) {
-            Storage::delete($store->image);
+            // Storage::delete($store->image);
+            CloudinaryStorage::delete($store->image);
         }
 
         Store::destroy($store->id);

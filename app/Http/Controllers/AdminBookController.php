@@ -58,8 +58,13 @@ class AdminBookController extends Controller
         ]);
         $validatedData['store_id'] = $user->store->id;
 
+
+
         if($request->file('image')) {
-            $validatedData['image'] = $request->file('image')->store('book-images');
+            // $validatedData['image'] = $request->file('image')->store('book-images');
+            $image  = $request->file('image');
+            $result = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
+            $validatedData['image'] = $result;
         }
 
         Book::create($validatedData);
@@ -111,10 +116,13 @@ class AdminBookController extends Controller
         $validatedData = $request->validate($rules);
 
         if($request->file('image')) {
-            if($request->oldImage) {
-                Storage::delete($request->oldImage);
-            }
-            $validatedData['image'] = $request->file('image')->store('store-images');
+            // if($request->oldImage) {
+            //     Storage::delete($request->oldImage);
+            // }
+            // $validatedData['image'] = $request->file('image')->store('book-images');
+            $file = $request->file('image');
+            $result = CloudinaryStorage::replace($book->image, $file->getRealPath(), $file->getClientOriginalName());
+            $validatedData['image'] = $result;
         }
 
         Book::where('id', $book->id)
@@ -132,7 +140,8 @@ class AdminBookController extends Controller
     public function destroy(Book $book)
     {
         if($book->image) {
-            Storage::delete($book->image);
+            // Storage::delete($book->image);
+            CloudinaryStorage::delete($book->image);
         }
 
         Book::destroy($book->id);

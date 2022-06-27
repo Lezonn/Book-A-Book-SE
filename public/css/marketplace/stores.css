@@ -40,3 +40,12 @@ hr {
     height: 3px !important;
     opacity: 100% !important;
 }
+
+.empty {
+    display: flex;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(199, 199, 199);
+    margin-top: 10px;
+}

@@ -1,15 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\StoreController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminBookController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\AdminStoreController;
 use App\Http\Controllers\LandingPageController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\StoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,8 +36,16 @@ Route::post('/register', [RegisterController::class, 'store'])->middleware('gues
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/stores', [StoreController::class, 'index']);
-Route::get('/stores/{store}/books', [StoreController::class, 'show']);
+Route::get('/stores', [StoreController::class, 'index'])->middleware('customer');
+Route::get('/stores/{store}', [StoreController::class, 'show'])->middleware('customer');
+Route::get('/stores/{store}/{book}', [BookController::class, 'show'])->middleware('customer');
+
+Route::get('/profile', [ProfileController::class, 'index'])->middleware('customer');
+Route::get('/profile/transactions', [ProfileController::class, 'transactions'])->middleware('customer');
+
+Route::get('/cart', [CartController::class, 'index'])->middleware('customer');
+Route::post('/cart', [CartController::class, 'store'])->middleware('customer');
+Route::post('/cart/checkout', [CartController::class, 'checkout'])->middleware('customer');
 
 // ADMIN
 Route::get('/admin/login', [AdminLoginController::class, 'index'])->name('loginAdmin')->middleware('guest');

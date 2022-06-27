@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;1,500&family=Neuton&display=swap');
+
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+.box {
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 12px;
+    margin-bottom: 2%;
+}
+
+.book-img {
+    width: 125px;
+    padding: 4%;
+}
+
+
+h1{
+
+    font-weight: 600 !important;
+    color: #151A50;
+}
+
+h2{
+    font-weight: 500;
+    font-style: italic;
+}
+
+.title h4{
+    font-weight: 600;
+}
+
+.desc {
+    padding: 1%;
+}
+
+.author{
+    font-weight: 600;
+    color: #A0A0A0;
+}
+
+.total{
+    font-weight: 700;
+    color: #028C10;
+}
+
+.qty{
+    font-weight: 600;
+}
+
+.detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.final-total {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.checkout{
+    background-color: #151A50;
+    font-weight: 700;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 12px;
+}
+
+.totalPrice h5{
+    font-weight: 700;
+    color: #C50000;
+}
+
+.empty h3 {
+    font-weight: 600 !important;
+    color: #C50000 !important;
+
+}
+
+.empty {
+    display: flex;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245, 245, 245);
+    margin-top: 10px;
+}
