@@ -2,7 +2,15 @@
 A website to help customers see the availability / stock of books at various branch of a bookstore. Then the customer can choose the desired book and the selected branch will keep the book then the customer comes to pick up and make transactions (SELF PICK UP).
 
 ## Demo link:
-https://bookabooks.herokuapp.com/
+Landing page <br />
+https://bookabooks.herokuapp.com/login <br />
+Admin login <br />
+https://bookabooks.herokuapp.com/admin/login <br />
+Admin credentials <br />
+email: adminanggrek1@gmail.com <br />
+password: adminAnggrek123
+
+
 
 ## How to run project in your local
   <strong>Configure the database</strong>
